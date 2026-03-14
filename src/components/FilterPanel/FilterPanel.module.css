@@ -1,0 +1,147 @@
+.wrap {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.titleIcon { color: var(--accent); font-size: 13px; }
+
+.addBtn {
+  padding: 3px 10px;
+  background: none;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.addBtn:hover { background: var(--accent-subtle); border-color: var(--accent-dim); }
+
+.empty {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.filterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.andLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+}
+
+.filterInputs {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.input, .opSelect {
+  background: var(--bg-input);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 13px;
+  padding: 0 14px;
+  outline: none;
+  height: 40px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  min-width: 0;
+}
+
+.input {
+  flex: 1;
+}
+
+.opSelect {
+  color: var(--accent);
+  font-weight: 600;
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.input:focus, .opSelect:focus {
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+}
+
+.removeBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 11px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover { 
+  background: rgba(255, 77, 79, 0.1); 
+  border-color: #ff4d4f; 
+  color: #ff4d4f; 
+}
+
+.orderSection {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.orderRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.limitSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.limitLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.limitInput {
+  max-width: 100px;
+  flex: none !important;
+}

@@ -1,0 +1,245 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border-subtle);
+  height: 100vh;
+  width: 68px;
+  overflow: hidden;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 100;
+}
+
+.sidebar.resizing {
+  transition: none !important;
+}
+
+/* Hover expansion */
+.sidebar:hover {
+  width: var(--sidebar-width, 240px) !important;
+}
+
+/* Force expanded width when not collapsed */
+.sidebar:not(.collapsed) {
+  width: var(--sidebar-width, 240px) !important;
+}
+
+.resizer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.resizer:hover {
+  background: var(--accent);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  height: var(--navbar-height);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.logoMark {
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar:hover .logoText,
+.sidebar:not(.collapsed) .logoText {
+  opacity: 1;
+}
+
+.logoAccent {
+  color: var(--accent);
+}
+
+.nav {
+  flex: 1;
+  padding: 16px 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.group {
+  margin-bottom: 24px;
+}
+
+.groupLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  padding: 0 12px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar:hover .groupLabel,
+.sidebar:not(.collapsed) .groupLabel {
+  opacity: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+.navItem:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.navItem.active {
+  background: var(--bg-active);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.navIcon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLabel {
+  flex: 1;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar:hover .navLabel,
+.sidebar:not(.collapsed) .navLabel {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.activeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar:hover .activeDot,
+.sidebar:not(.collapsed) .activeDot {
+  opacity: 1;
+}
+
+.collapseBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  transition: color 0.2s;
+  width: 100%;
+}
+
+.collapseBtn:hover {
+  color: var(--text-secondary);
+}
+
+.collapseIcon {
+  font-size: 20px;
+  line-height: 1;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.collapseText {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar:hover .collapseText,
+.sidebar:not(.collapsed) .collapseText {
+  opacity: 1;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.footerDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--success);
+}
+
+.footerText {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar:hover .footerText,
+.sidebar:not(.collapsed) .footerText {
+  opacity: 1;
+}
+
+.collapsed .navItem { justify-content: flex-start; }
+.collapsed .collapseBtn { justify-content: flex-start; }

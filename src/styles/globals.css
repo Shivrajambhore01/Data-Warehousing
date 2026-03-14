@@ -1,0 +1,128 @@
+/* ============================================================
+   DataForge — Global Design Tokens & Base Styles
+   Dark industrial aesthetic with amber accent
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Core palette */
+  --bg-base:       #0a0b0e;
+  --bg-panel:      #0f1117;
+  --bg-elevated:   #161923;
+  --bg-hover:      #1d2130;
+  --bg-active:     #222840;
+  --bg-input:      #13161f;
+
+  /* Borders */
+  --border-subtle: #1e2330;
+  --border-mid:    #2a3045;
+  --border-strong: #3d4a6b;
+
+  /* Accent — electric amber */
+  --accent:        #f5a623;
+  --accent-dim:    #c47f0f;
+  --accent-glow:   rgba(245, 166, 35, 0.15);
+  --accent-subtle: rgba(245, 166, 35, 0.08);
+
+  /* Secondary accent — cyan */
+  --cyan:          #3dd6f5;
+  --cyan-dim:      #1ba8c7;
+  --cyan-subtle:   rgba(61, 214, 245, 0.08);
+
+  /* Status colors */
+  --success:       #2dc96a;
+  --success-subtle:rgba(45, 201, 106, 0.1);
+  --warning:       #f5a623;
+  --error:         #f5554a;
+  --error-subtle:  rgba(245, 85, 74, 0.1);
+  --info:          #3dd6f5;
+
+  /* Text */
+  --text-primary:  #e8eaf0;
+  --text-secondary:#8b93a8;
+  --text-muted:    #505870;
+  --text-inverse:  #0a0b0e;
+
+  /* Typography */
+  --font-sans:  'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-mono:  'IBM Plex Mono', 'Fira Code', monospace;
+
+  /* Sizing */
+  --sidebar-width: 240px;
+  --navbar-height: 52px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.5);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.6);
+  --shadow-accent: 0 0 20px rgba(245,166,35,0.2);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Selection */
+::selection { background: var(--accent-glow); color: var(--accent); }
+
+/* Utility classes */
+.mono { font-family: var(--font-mono); }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Focus ring */
+*:focus-visible {
+  outline: 1.5px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-8px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+.fade-in    { animation: fadeIn 0.2s ease forwards; }
+.slide-left { animation: slideInLeft 0.2s ease forwards; }

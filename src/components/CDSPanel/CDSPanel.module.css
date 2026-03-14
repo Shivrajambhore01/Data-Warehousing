@@ -1,0 +1,110 @@
+.container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.titleInfo h3 {
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.titleInfo p {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.addBtn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.viewCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nameInput {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+
+.removeBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cardBody {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expressionInput {
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  padding: 12px;
+  border-radius: 4px;
+  min-height: 80px;
+  resize: vertical;
+  outline: none;
+}
+
+.descInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 4px 0;
+  outline: none;
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  border: 2px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.empty code {
+  color: var(--accent);
+  background: rgba(245, 166, 35, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
